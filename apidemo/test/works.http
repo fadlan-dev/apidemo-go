@@ -1,0 +1,15 @@
+@HOST = http://localhost:8080
+
+POST {{HOST}}/works
+Content-Type: application/json
+
+{
+    "title" : "New Website triple-i",
+    "description" : "เทคโนโลยีไม่ได้มาแย่งงานมนุษย์ แต่มาช่วยทำงานหนักแทนมนุษย์ต่างหาก",
+    "tags": ["Nuxt.js"]
+}
+
+###
+
+GET {{HOST}}/works
+Content-Type: application/json
