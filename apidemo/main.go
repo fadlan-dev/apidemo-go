@@ -12,10 +12,10 @@ import (
 
 	"github.com/fadlan-dev/auth"
 	"github.com/fadlan-dev/todo"
-	"github.com/fadlan-dev/work"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"gorm.io/driver/sqlite"
+	"golang.org/x/time/rate"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
@@ -26,20 +26,38 @@ var (
 
 func main() {
 
-	err := godotenv.Load("local.env")
+	// Liveness Probe
+	_, err := os.Create("/tmp/live")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer os.Remove("/tpm/live")
+
+	// Configuration
+	err = godotenv.Load("local.env")
 	if err != nil {
 		fmt.Printf("please consider enviroment varibles: %s /n", err)
 	}
 
-	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open(os.Getenv("DB_CONN")), &gorm.Config{})
 	if err != nil {
-		panic("failed to connet database")
+		panic("failed to connet database " + err.Error())
 	}
 
 	// auto create table
-	db.AutoMigrate(&todo.Todo{}, &work.Work{})
+	db.AutoMigrate(&todo.Todo{})
 
 	r := gin.Default()
+
+	// Readines Probe
+	r.GET("/healthz", func(c *gin.Context) {
+		c.Status(200)
+	})
+
+	// Rate Limit
+	r.GET("/limitz", limitedHandler)
+
+	// ldflags chek
 	r.GET("/x", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"buildcommit": buildcommit,
@@ -88,4 +106,17 @@ func main() {
 	if err := s.Shutdown(timeoutCtx); err != nil {
 		fmt.Println(err)
 	}
+}
+
+// Rate Limit
+var limiter = rate.NewLimiter(5, 5)
+
+func limitedHandler(c *gin.Context) {
+	if !limiter.Allow() {
+		c.AbortWithStatus(http.StatusTooManyRequests)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "pong",
+	})
 }

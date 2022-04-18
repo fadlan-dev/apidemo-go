@@ -1,5 +1,4 @@
 @HOST = http://localhost:8081
-GET {{HOST}}/ping
 ###
 GET {{HOST}}/tokenz
 
@@ -7,13 +6,13 @@ GET {{HOST}}/tokenz
 
 POST {{HOST}}/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAwMzY1OTZ9.vcoKy-em8nQzwcaJ3TZ_0SoMPT4IbKDRJADtHf88lRg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzIxOTF9.kyCEfiUaWeJsCx0dAPlBgbiIwzI64TH0fWGFGEczZeQ
 
 {
-    "text" : "test 6"
+    "text" : "test 1"
 }
 
 ###
 GET {{HOST}}/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAwMzY1OTZ9.vcoKy-em8nQzwcaJ3TZ_0SoMPT4IbKDRJADtHf88lRg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzIxOTF9.kyCEfiUaWeJsCx0dAPlBgbiIwzI64TH0fWGFGEczZeQ
