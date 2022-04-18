@@ -6,7 +6,7 @@ GET {{HOST}}/tokenz
 
 POST {{HOST}}/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzIxOTF9.kyCEfiUaWeJsCx0dAPlBgbiIwzI64TH0fWGFGEczZeQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzQ5MDR9.riaqC5HuxbBEWcd6p4A5_rJxwZNDiltl0m2Y6-ycS9E
 
 {
     "text" : "test 1"
@@ -15,4 +15,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzIxO
 ###
 GET {{HOST}}/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzIxOTF9.kyCEfiUaWeJsCx0dAPlBgbiIwzI64TH0fWGFGEczZeQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAyNzQ5MDR9.riaqC5HuxbBEWcd6p4A5_rJxwZNDiltl0m2Y6-ycS9E
