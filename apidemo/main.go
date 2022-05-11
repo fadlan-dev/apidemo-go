@@ -10,13 +10,14 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/fadlan-dev/auth"
-	"github.com/fadlan-dev/todo"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"golang.org/x/time/rate"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+
+	"github.com/fadlan-dev/auth"
+	"github.com/fadlan-dev/todo"
 )
 
 var (
@@ -41,7 +42,7 @@ func main() {
 
 	db, err := gorm.Open(mysql.Open(os.Getenv("DB_CONN")), &gorm.Config{})
 	if err != nil {
-		panic("failed to connet database " + err.Error())
+		panic("failed to connect database")
 	}
 
 	// auto create table
