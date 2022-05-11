@@ -31,12 +31,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer os.Remove("/tpm/live")
+	defer os.Remove("/tmp/live")
 
 	// Configuration
 	err = godotenv.Load("local.env")
 	if err != nil {
-		fmt.Printf("please consider enviroment varibles: %s /n", err)
+		log.Printf("please consider environment variables: %s\n", err)
 	}
 
 	db, err := gorm.Open(mysql.Open(os.Getenv("DB_CONN")), &gorm.Config{})
