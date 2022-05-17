@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue May 17 14:35:12 2022
+# Make data base, printed on Wed May 11 14:15:53 2022
 
 # Variables
 
@@ -19,7 +19,6 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -28,15 +27,15 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/fadlan.j/Desktop/goseries/Robust API Services with Go/apidemo
+CURDIR := /Users/fadlan.j/Desktop/goseries/Robust API Services with Go
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -46,7 +45,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/4k/7zwtxcfd5dl5rm2flr82z_500000gn/T/vscode-ipc-3bdfd5db-ddd2-4a46-8cbd-4ee16c357cbf.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/4k/7zwtxcfd5dl5rm2flr82z_500000gn/T/vscode-ipc-234d7570-a1ad-4c20-9311-d0b367d67faf.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -62,15 +61,16 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
+ 
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7DOvbeTwCK/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ujYH8zPM94/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/fadlan.j/Desktop/goseries/Robust API Services with Go/apidemo
+PWD = /Users/fadlan.j/Desktop/goseries/Robust API Services with Go
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -104,7 +104,7 @@ MAKE_VERSION := 3.81
 # environment
 USER = fadlan.j
 # makefile
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := 
 # environment
 LESS = -R
 # automatic
@@ -145,6 +145,7 @@ PAGER = less
 LC_ALL = C
 # automatic
 ^F = $(notdir $^)
+ 
 # default
 SUFFIXES := 
 # default
@@ -154,9 +155,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1452
+VSCODE_PID = 1250
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=2/94=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/91=2%
 
 # Pattern-specific Variable Values
 
@@ -164,9 +165,9 @@ VSCODE_PID = 1452
 
 # Directories
 
-# . (device 16777224, inode 76663376): 19 files, no impossibilities.
+# . (device 16777221, inode 76655774): 6 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -182,12 +183,6 @@ all:
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
-
-.PHONY: build maria
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -197,33 +192,23 @@ all:
 
 # Not a target:
 Makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-05-11 22:23:32
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-build:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
+# Not a target:
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 4):
-	go build \
-	-ldflags "-X main.buildcommit=`git rev-parse --short HEAD` \
-	-X main.buildtime=`date "+%Y-%m-%dT%H:%M:%S%Z:00"`" \
-	-o app
-	
-
-container:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 17):
-	docker run -p:8081:8081 --env-file ./local.env --link some-mariadb:db \
-	--name myapp todo:test
-	
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -231,37 +216,29 @@ container:
 #  Modification time never checked.
 #  File has not been updated.
 
-image:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 14):
-	docker build -t todo:test -f Dockerfile .
-	
-
-maria:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
+# Not a target:
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 10):
-	docker run -p 127.0.0.1:3306:3306  --name some-mariadb \
-	-e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=myapp -d mariadb:latest
-	
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/23=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue May 17 14:35:12 2022
+# Finished Make data base on Wed May 11 14:15:53 2022
 
  

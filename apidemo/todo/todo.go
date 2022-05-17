@@ -95,6 +95,30 @@ func (t *TodoHandler) Remove(c *gin.Context) {
 	})
 }
 
+func (t *TodoHandler) GetTodo(c *gin.Context) {
+	var todo Todo
+	idParam := c.Param("id")
+
+	id, err := strconv.Atoi(idParam)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	r := t.db.First(&todo, id)
+	if err := r.Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, todo)
+
+}
+
 func (w *TodoHandler) ListTodo(c *gin.Context) {
 	var todos []Todo
 	result := w.db.Find(&todos)

@@ -10,6 +10,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"golang.org/x/time/rate"
@@ -35,8 +36,8 @@ func main() {
 	defer os.Remove("/tmp/live")
 
 	// Configuration
-	err = godotenv.Load("local.env")
-	if err != nil {
+
+	if err := godotenv.Load("local.env"); err != nil && !os.IsNotExist(err) {
 		log.Printf("please consider environment variables: %s\n", err)
 	}
 
@@ -49,6 +50,18 @@ func main() {
 	db.AutoMigrate(&todo.Todo{})
 
 	r := gin.Default()
+
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{
+		"http://localhost:8080",
+	}
+	config.AllowHeaders = []string{
+		"Origin",
+		"Authorization",
+		"TransactionID",
+	}
+
+	r.Use(cors.New(config))
 
 	// Readines Probe
 	r.GET("/healthz", func(c *gin.Context) {
@@ -73,6 +86,8 @@ func main() {
 	t := todo.NewTodoHandler(db)
 	protected.POST("/todos", t.NewTask)
 	protected.GET("/todos", t.ListTodo)
+	protected.GET("/todo/:id", t.GetTodo)
+	protected.DELETE("/todos/:id", t.Remove)
 
 	// new work handler
 	// w := work.NewWorkHandler(db)

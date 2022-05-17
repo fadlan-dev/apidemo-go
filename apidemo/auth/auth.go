@@ -11,7 +11,7 @@ import (
 func AccessToken(signature string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token := jwt.NewWithClaims(jwt.SigningMethodHS256, &jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(5 * time.Minute).Unix(),
+			ExpiresAt: time.Now().Add(120 * time.Minute).Unix(),
 		})
 
 		ss, err := token.SignedString([]byte(signature))
