@@ -37,7 +37,7 @@ func main() {
 
 	// Configuration
 
-	if err := godotenv.Load("local.env"); err != nil && !os.IsNotExist(err) {
+	if err := godotenv.Load(".env.local"); err != nil && !os.IsNotExist(err) {
 		log.Printf("please consider environment variables: %s\n", err)
 	}
 

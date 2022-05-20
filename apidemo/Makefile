@@ -14,5 +14,5 @@ image:
 	docker build -t todo:test -f Dockerfile .
 
 container:
-	docker run -p:8081:8081 --env-file ./local.env --link some-mariadb:db \
+	docker run -p:8081:8081 --env-file ./.env.local --link some-mariadb:db \
 	--name myapp todo:test

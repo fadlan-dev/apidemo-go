@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Wed May 11 14:15:53 2022
+# Make data base, printed on Fri May 20 16:50:34 2022
 
 # Variables
 
@@ -19,6 +19,7 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
+ 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -45,7 +46,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/4k/7zwtxcfd5dl5rm2flr82z_500000gn/T/vscode-ipc-234d7570-a1ad-4c20-9311-d0b367d67faf.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/4k/7zwtxcfd5dl5rm2flr82z_500000gn/T/vscode-ipc-30ae8ffe-5ff5-4376-bf74-5905069030e1.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -57,14 +58,15 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 GOPATH = /Users/fadlan.j/go
 # environment
+LaunchInstanceID = 00573D01-ABC9-41EE-A39E-068E59761B5E
+# environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
- 
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ujYH8zPM94/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SNxHJy5JOJ/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -80,7 +82,7 @@ HOME = /Users/fadlan.j
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/fadlan.j/Library/Application Support/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+VSCODE_CODE_CACHE_PATH = /Users/fadlan.j/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = fadlan.j
 # environment
@@ -118,7 +120,7 @@ TMPDIR = /var/folders/4k/7zwtxcfd5dl5rm2flr82z_500000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/fadlan.j/Library/Application Support/Code/1.67.1-main.sock
+VSCODE_IPC_HOOK = /Users/fadlan.j/Library/Application Support/Code/1.67.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -126,7 +128,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.79593407.79593413
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.81537361.81537367
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -143,9 +145,10 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a4
 # automatic
 ^F = $(notdir $^)
- 
 # default
 SUFFIXES := 
 # default
@@ -155,9 +158,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1250
+VSCODE_PID = 1438
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=2/91=2%
+# Load=72/1024=7%, Rehash=0, Collisions=2/93=2%
 
 # Pattern-specific Variable Values
 
@@ -165,9 +168,9 @@ VSCODE_PID = 1250
 
 # Directories
 
-# . (device 16777221, inode 76655774): 6 files, no impossibilities.
+# . (device 16777222, inode 76655774): 7 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -214,6 +217,7 @@ makefile:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -239,6 +243,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed May 11 14:15:53 2022
+# Finished Make data base on Fri May 20 16:50:34 2022
 
  
